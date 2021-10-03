@@ -1,0 +1,123 @@
+@charset "utf-8";
+/*前ページ共通CSS*/
+p {
+  line-height: 3rem;
+}
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  padding: 0 30px 0 25px;
+  line-height: 1;
+}
+
+.top_visual {
+  background: linear-gradient( transparent 30%, rgba(73,73,73,0.5)),url(../brewery/images/top_visual.jpg);
+  background-size: cover;
+  background-position-x: center;
+  height: 100vh;
+}
+
+#todown p:first-of-type{
+  margin-bottom: 30px;
+} 
+
+section .box{
+  position: relative;
+}
+section .box figure {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+section .box img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+section .box .box-p {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background:rgba(255,255,255,0.8);
+  text-align: left;
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+  padding: 10px;
+  top: 0;
+  box-sizing: border-box;
+}
+section .box .box-p p{
+  position:relative;
+  top: 10px;
+  text-align: left;
+  line-height: 2rem;
+}
+
+section .box .res-box-p p{
+  position: relative;
+} 
+
+main .environment {
+  position: relative;
+  background: linear-gradient(rgba(255,255,255,0.8) 50%, transparent),url(./images/environment.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 676px;
+  margin: 0 calc(49% - 50vw);
+  padding: 0 calc(50vw - 49%);
+  width: 100vw;
+  text-align: right;
+}
+
+main .environment p{
+  color: #2e2e2e;
+}
+
+section address{
+  line-height: 3rem;
+  margin-bottom: 44px;
+  font-style: normal;
+}
+
+@media screen and (max-width:768px){
+  section .box{
+    width: 100%;
+  }
+  section .box img {
+    width: 70%;
+    vertical-align: bottom;
+  }
+  
+  section .box p {
+    position: relative;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 3rem;
+    margin-bottom: 30px;
+    padding: 10px;
+    top: 0;
+  }
+
+  main section:nth-of-type(1){
+    padding-bottom: 0;
+  }
+
+  main .environment {
+    position: relative;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),url(./images/environment.jpg);
+    background-repeat: no-repeat;
+    height: 676px;
+    margin: 0 calc(48% - 50vw);
+    padding: 0 calc(50vw - 49%);
+    text-align: right;
+  }
+
+  main section .map{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  main section .map iframe{
+    width: 100%;
+  }
+}

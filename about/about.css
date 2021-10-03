@@ -1,0 +1,331 @@
+@charset "utf-8";
+/*前ページ共通CSS*/
+
+.clear {
+  clear: both;
+}
+
+.top_visual {
+  background: linear-gradient( transparent 30%, rgba(73, 73, 73, 0.5)), url(./images/top_visual.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+main section {
+  padding-top: 0px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  padding: 0 30px 0 25px;
+  line-height: 1;
+}
+
+h2 {
+  font-family: "小塚明朝 Pr6N";
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0px 0 60px 0;
+  font-weight: bold;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #494949;
+}
+
+h3 {
+  display: inline-block;
+  border-bottom: 1px solid #494949;
+  margin-bottom: 10px;  /* 追加 */
+}
+
+p {
+  line-height: 3rem;
+}
+
+section:first-of-type {
+  margin-top: 0;
+}
+
+section:first-of-type h2 {
+  margin-top: 60px;
+}
+
+section:first-of-type p {
+  width: 90%;
+}
+
+.climber_res {
+  display: none;
+}
+
+.beer {
+  margin-top: 30px;
+  position: relative;
+  background-image: url(./images/beer.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 550px;
+  display: flex;
+  justify-content: space-around;
+}
+
+section .left-box {
+  position: relative;
+  width: 50%;
+}
+section .right-box {
+  position: relative;
+  width: 50%;
+}
+
+section .float_box {
+  width: 100%;
+  padding: 0 px;
+}
+
+section .float_box p {
+  line-height: 2rem;
+  
+}
+
+section .float_box:after {
+  display: block;
+  content: "";
+  border-bottom: 1px solid #494949;
+  width: 0%; /* 追加 */
+  transition: all 1s; /* 追加 */
+}
+
+/* left */
+section .left-box .float_box:nth-of-type(1){
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 75px;
+}
+
+/* 追加 */
+section .left-box .float_box:nth-of-type(1).move:after{ 
+  width: 100%;
+}
+
+.left-box .float_box:nth-of-type(1) figure {
+  margin-top: 0.5rem;
+}
+
+section .float_box:nth-of-type(1) p {
+  width: 50%;
+}
+
+.left-box .float_box:nth-of-type(2) {
+  position: absolute;
+  width: 50%;
+  right: 0;
+  top: 100px;
+}
+
+/* 追加 */
+.left-box .float_box:nth-of-type(2).move:after {
+  width: 100%;
+}
+
+.left-box .float_box:nth-of-type(2) p{
+  width: 80%;
+}
+
+/* right */
+
+/* 追加 */
+section .right-box .float_box:after {
+  display: block;
+  position: relative;
+  left: 100%;
+  content: "";
+  border-bottom: 1px solid #494949;
+  width: 0%;
+  transition: all 1s;
+  transform: translateX(-100%);
+}
+
+.right-box .float_box:nth-of-type(1) {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: 200px;
+  text-align: right;
+}
+
+/* 追加 */
+.right-box .float_box:nth-of-type(1).move:after {
+  width: 100%;
+}
+
+.right-box .float_box:nth-of-type(1) p{
+  width: 50%;
+  margin-left: 50%;
+}
+
+.right-box .float_box:nth-of-type(2) {
+  position: absolute;
+  width: 50%;
+  left: 0;
+  top: 0px;
+  text-align: right;
+}
+
+.right-box .float_box:nth-of-type(2) p{
+  width: 80%;
+  margin-left: 20%;
+}
+
+/* 追加 */
+.right-box .float_box:nth-of-type(2).move:after {
+  width: 100%;
+}
+
+section:nth-of-type(3) .graph {
+  position: relative;
+}
+
+.graph img {
+  height: auto;
+  width: 100%;
+}
+
+section:nth-of-type(3) .graph p {
+  position: absolute;
+  top: 50px;
+  right: 10%;
+  border-bottom: 1px solid #494949;
+}
+
+main section:nth-of-type(2) {
+  padding-bottom: 0px;
+}
+
+.graph_arrow {
+  margin-top: 100px;
+}
+
+@media screen and (max-width:768px) {
+  .flex {
+    display: block;
+  }
+  h3 {
+    display: inline-block;
+    border-bottom: 1px solid #494949;
+    margin: 30px 0 30px 0;
+  }
+  main section:nth-of-type(1) p {
+    margin-bottom: 30px;
+  }
+  section:first-of-type p {
+    width: 100%;
+  }
+  .climber_pc {
+    display: none;
+  }
+  .climber_res {
+    display: block;
+    width: 100vw;
+    margin: 0 calc(48.5% - 50vw);
+  }
+  .climber_res figure img {
+    width: 150%;
+    height: 150%;
+  }
+
+  .beer {
+    margin-top: 0px;
+    position: relative;
+    background-image: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    display: block;
+  }
+  section .float_box:after {
+    display: block;
+    content: "";
+    border-bottom:none;
+  }
+  section .right-box .float_box:after {
+    display: block;
+    content: "";
+    border-bottom:none;
+  }
+  section .left-box {
+    position: relative;
+    width: 100%;
+  }
+  section .right-box {
+    position: relative;
+    width: 100%;
+  }
+  section .float_box:nth-of-type(1) p {
+    width: 100%;
+  }
+  section .left-box .float_box:nth-of-type(2) p {
+    width: 100%;
+  }
+  section .right-box .float_box:nth-of-type(1){
+    text-align: left;
+  }
+  section .right-box .float_box:nth-of-type(1) p {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
+  section .right-box .float_box:nth-of-type(2){
+    text-align: left;
+  }
+  section .right-box .float_box:nth-of-type(2) p {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
+  section .left-box .float_box:nth-of-type(1) {
+    position: static;
+    width: 100%;
+    left: 0;
+    top: 0px;
+  }
+  section .left-box .float_box:nth-of-type(2) {
+    position: static;
+    width: 100%;
+    left: 0;
+    top: 0px;
+  }
+  section .right-box .float_box:nth-of-type(1) {
+    position: static;
+    width: 100%;
+    left: 0;
+    top: 0px;
+  }
+  section .right-box .float_box:nth-of-type(2) {
+    position: static;
+    width: 100%;
+    left: 0;
+    top: 0px;
+  }
+
+  section .float_box {
+    float: none;
+    width: 100%;
+    padding: 0px;
+  }
+  section .float_box p {
+    line-height: 3rem;
+  }
+
+  main section:nth-of-type(3) {
+    margin-top: 60px
+  }
+  .graph_arrow {
+    margin: 30px auto 30px;
+    text-align: center;
+    transform: rotate(90deg);
+}
+}
