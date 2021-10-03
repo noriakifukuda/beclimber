@@ -80,6 +80,61 @@ section address{
   font-style: normal;
 }
 
+.hiker-flex{
+  display: flex;
+  justify-content: left;
+  position: relative;
+  height: 200px;
+}
+
+.hiker-flex figure{
+  margin: 50px 0px;
+  box-sizing: border-box;
+}
+.hiker-flex figure.hiker1{
+  opacity: 0;
+}
+.hiker-flex figure.hiker2{
+  opacity: 0;
+}
+.hiker-flex figure.hiker3{
+  opacity: 0;
+}
+.hiker-flex figure.hiker4{
+  opacity: 0;
+}
+.hiker-flex figure.hiker5{
+  opacity: 0;
+}
+
+.hiker-flex figure.hiker1.move{
+  position: absolute;
+  right: 0;
+  opacity: 1;
+}
+.hiker-flex figure.hiker2.move{
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  opacity: 1;
+}
+.hiker-flex figure.hiker3.move{
+  position: absolute;
+  right: 200px;
+  opacity: 1;
+}
+.hiker-flex figure.hiker4.move{
+  position: absolute;
+  top:100px;
+  right: 300px;
+  opacity: 1;
+}
+.hiker-flex figure.hiker5.move{
+  position: absolute;
+  right: 400px;
+  opacity: 1;
+}
+
 @media screen and (max-width:768px){
   section .box{
     width: 100%;
@@ -119,5 +174,16 @@ section address{
   }
   main section .map iframe{
     width: 100%;
+  }
+  .hiker-flex{
+    display: none;
+    justify-content: left;
+    position: relative;
+    height: 140px;
+  }
+  
+  .hiker-flex figure{
+    margin: 20px 0px;
+    box-sizing: border-box;
   }
 }

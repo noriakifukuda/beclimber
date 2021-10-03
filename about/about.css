@@ -37,7 +37,7 @@ h2 {
 h3 {
   display: inline-block;
   border-bottom: 1px solid #494949;
-  margin-bottom: 10px;  /* 追加 */
+  margin-bottom: 10px;  
 }
 
 p {
@@ -82,7 +82,7 @@ section .right-box {
 
 section .float_box {
   width: 100%;
-  padding: 0 px;
+  padding: 0 0px;
 }
 
 section .float_box p {
@@ -106,7 +106,6 @@ section .left-box .float_box:nth-of-type(1){
   top: 75px;
 }
 
-/* 追加 */
 section .left-box .float_box:nth-of-type(1).move:after{ 
   width: 100%;
 }
@@ -126,7 +125,6 @@ section .float_box:nth-of-type(1) p {
   top: 100px;
 }
 
-/* 追加 */
 .left-box .float_box:nth-of-type(2).move:after {
   width: 100%;
 }
@@ -135,9 +133,9 @@ section .float_box:nth-of-type(1) p {
   width: 80%;
 }
 
+
 /* right */
 
-/* 追加 */
 section .right-box .float_box:after {
   display: block;
   position: relative;
@@ -157,7 +155,6 @@ section .right-box .float_box:after {
   text-align: right;
 }
 
-/* 追加 */
 .right-box .float_box:nth-of-type(1).move:after {
   width: 100%;
 }
@@ -180,7 +177,6 @@ section .right-box .float_box:after {
   margin-left: 20%;
 }
 
-/* 追加 */
 .right-box .float_box:nth-of-type(2).move:after {
   width: 100%;
 }
@@ -204,6 +200,8 @@ section:nth-of-type(3) .graph p {
 main section:nth-of-type(2) {
   padding-bottom: 0px;
 }
+
+
 
 .graph_arrow {
   margin-top: 100px;
@@ -235,8 +233,9 @@ main section:nth-of-type(2) {
   .climber_res figure img {
     width: 150%;
     height: 150%;
+  
   }
-
+  /* 改めまして */
   .beer {
     margin-top: 0px;
     position: relative;
@@ -259,58 +258,60 @@ main section:nth-of-type(2) {
   section .left-box {
     position: relative;
     width: 100%;
-  }
+}
   section .right-box {
     position: relative;
     width: 100%;
-  }
-  section .float_box:nth-of-type(1) p {
-    width: 100%;
-  }
-  section .left-box .float_box:nth-of-type(2) p {
-    width: 100%;
-  }
-  section .right-box .float_box:nth-of-type(1){
-    text-align: left;
-  }
-  section .right-box .float_box:nth-of-type(1) p {
-    width: 100%;
-    margin-left: 0;
-    text-align: left;
-  }
-  section .right-box .float_box:nth-of-type(2){
-    text-align: left;
-  }
-  section .right-box .float_box:nth-of-type(2) p {
-    width: 100%;
-    margin-left: 0;
-    text-align: left;
-  }
-  section .left-box .float_box:nth-of-type(1) {
-    position: static;
-    width: 100%;
-    left: 0;
-    top: 0px;
-  }
-  section .left-box .float_box:nth-of-type(2) {
-    position: static;
-    width: 100%;
-    left: 0;
-    top: 0px;
-  }
-  section .right-box .float_box:nth-of-type(1) {
-    position: static;
-    width: 100%;
-    left: 0;
-    top: 0px;
-  }
-  section .right-box .float_box:nth-of-type(2) {
-    position: static;
-    width: 100%;
-    left: 0;
-    top: 0px;
-  }
+}
+section .float_box:nth-of-type(1) p {
+  width: 100%;
+}
+section .left-box .float_box:nth-of-type(2) p {
+  width: 100%;
+}
+section .right-box .float_box:nth-of-type(1){
+  text-align: left;
+}
+section .right-box .float_box:nth-of-type(1) p {
+  width: 100%;
+  margin-left: 0;
+  text-align: left;
+}
+section .right-box .float_box:nth-of-type(2){
+  text-align: left;
+}
+section .right-box .float_box:nth-of-type(2) p {
+  width: 100%;
+  margin-left: 0;
+  text-align: left;
+}
+section .left-box .float_box:nth-of-type(1) {
+  position: static;
+  width: 100%;
+  left: 0;
+  top: 0px;
+}
+section .left-box .float_box:nth-of-type(2) {
+  position: static;
+  width: 100%;
+  left: 0;
+  top: 0px;
+}
+section .right-box .float_box:nth-of-type(1) {
+  position: static;
+  width: 100%;
+  left: 0;
+  top: 0px;
+}
+section .right-box .float_box:nth-of-type(2) {
+  position: static;
+  width: 100%;
+  left: 0;
+  top: 0px;
+}
 
+
+/* 元から */
   section .float_box {
     float: none;
     width: 100%;
@@ -319,13 +320,22 @@ main section:nth-of-type(2) {
   section .float_box p {
     line-height: 3rem;
   }
-
-  main section:nth-of-type(3) {
-    margin-top: 60px
+  .float_box:nth-of-type(2) {
+    position: relative;
+    top: 0px;
   }
+  .float_box:nth-of-type(2) p:after {
+    width: 18vw;
+  }
+  main .text-align-right {
+    margin: 30px 0;
+  }
+  main .text-align-right a {
+    top: -0px;
+}
   .graph_arrow {
     margin: 30px auto 30px;
     text-align: center;
     transform: rotate(90deg);
-}
+  }
 }

@@ -67,7 +67,88 @@ a {
   justify-content: space-between;
 }
 
-.header input, header label ,header img ,#menu-btn-check{
+/* shutter */
+.shutter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f5c921;
+  z-index: 9999;
+}
+
+.shutter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #f6f4f3;
+  width: 0;
+  height: 1px;
+}
+
+.shutter {
+  -webkit-animation: byeShutter 2.6s forwards;
+  animation: byeShutter 2.6s forwards;
+}
+
+@keyframes byeShutter {
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+}
+
+.shutter::before {
+  -webkit-animation: shutterOpen 2.6s forwards;
+  animation: shutterOpen 2.6s forwards;
+}
+
+@keyframes shutterOpen {
+  0% {
+    width: 0;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  90% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.content {
+  -webkit-animation: contentScale 2.6s forwards;
+  animation: contentScale 2.6s forwards;
+}
+
+@keyframes contentScale {
+  70% {
+    -webkit-transform: perspective(800px) scale(0.9) rotateX(15deg);
+    transform: perspective(800px) scale(0.9) rotateX(15deg);
+  }
+  100% {
+    -webkit-transform: perspective(800px) scale(1) rotateX(0);
+    transform: perspective(800px) scale(1) rotateX(0);
+  }
+}
+
+/* sutter end */
+
+.header input, header label, header img, #menu-btn-check {
   display: none;
 }
 
@@ -95,11 +176,29 @@ header nav ul {
 }
 
 header nav ul li {
-  margin: 0px 10px;
+  margin: 0px 3px;
+}
+
+header nav ul li:first-of-type {
+  margin-left: 30px;
+}
+
+header nav ul li:last-of-type {
+  margin-right: 30px;
+}
+
+header nav ul li:nth-of-type(5) {
+  margin: 0px 0px;
 }
 
 header nav ul li a {
   transition: .2s;
+}
+
+header nav ul li a img {
+  display: inline-block;
+  width: 60px;
+  margin-top: -15px;
 }
 
 header nav ul li a:hover {
@@ -319,10 +418,10 @@ footer .sns a {
     max-width: 100%;
   }
   /* hamberger  */
-  .header input, header label ,header img {
+  .header input, header label, header img {
     display: block;
   }
-  header #menu-btn-check:checked ~ .menu-content {
+  header #menu-btn-check:checked~.menu-content {
     top: 0;
   }
   .logo_menu {
@@ -337,22 +436,23 @@ footer .sns a {
     width: 50%;
     height: 50%;
   }
-  header .inner{
+  header .inner {
     width: 100vw;
   }
-
   header nav {
     background-color: rgba(245, 201, 33, 0.95);
     height: 100vh;
     position: fixed;
     top: -120%;
-    left: 0%;/*leftの値を変更してメニューを画面外へ*/
+    left: 0%;
+    /*leftの値を変更してメニューを画面外へ*/
     transform: translateX(0%);
     padding-top: 100px;
     box-sizing: border-box;
     z-index: 4;
     border: none;
-    transition: all 0.5s;/*アニメーション設定*/
+    transition: all 0.5s;
+    /*アニメーション設定*/
     cursor: auto;
   }
   header nav ul {
@@ -369,7 +469,7 @@ footer .sns a {
     justify-content: space-around;
     padding: 100px;
   }
-  header nav ul.flex{
+  header nav ul.flex {
     display: block;
     text-align: center;
     width: 100vw;
@@ -381,8 +481,16 @@ footer .sns a {
   header nav ul li a:hover {
     color: #fff;
   }
-   /* hamberger end */
-
+  header nav ul li:nth-of-type(5) {
+    display: none;
+  }
+  header nav ul li:first-of-type {
+    margin-left: 0px;
+  }
+  header nav ul li:last-of-type {
+    margin-right: 0px;
+  }
+  /* hamberger end */
   main .totop .top_climber {
     position: fixed;
     right: 12px;
@@ -408,10 +516,9 @@ footer .sns a {
   footer .flex {
     display: block;
   }
-
-  footer .footer_right p:first-child{
+  footer .footer_right p:first-child {
     margin-top: 30px;
-  } 
+  }
   footer .sns a {
     margin-right: 0px;
     margin-bottom: 30px;

@@ -1,12 +1,50 @@
-$('.slider').slick({
-  autoplay: true,//自動的に動き出すか。初期値はfalse。
-  infinite: true,//スライドをループさせるかどうか。初期値はtrue。
-  speed: 500,//スライドのスピード。初期値は300。
-  slidesToShow: 3,//スライドを画面に3枚見せる
-  slidesToScroll: 1,//1回のスクロールで1枚の写真を移動して見せる
-  prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
-  nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
-  centerMode: true,//要素を中央ぞろえにする
-  variableWidth: true,//幅の違う画像の高さを揃えて表示
-  dots: true,//下部ドットナビゲーションの表示
+$(function () {
+  $(document).ready(function () {
+    // スクロールで反応するアニメーション
+    $(window).on('load scroll', function () {
+      SetScrollTiming('.ani1');
+    });
+  });
+
+  // スクロールのタイミングでアニメーションさせる
+  function SetScrollTiming(target) {
+    var box = $(target);
+    var animated = 'animated';
+
+    box.each(function () {
+      var boxOffset = $(this).offset().top;
+      var scrollPos = $(window).scrollTop();
+      var wh = $(window).height();
+
+      //画面内のどの位置で処理を実行するかで「100」の値を変更
+      if (scrollPos > boxOffset - wh + 400) {
+        $(this).addClass('move');
+      }
+    });
+  }
+});
+$(function () {
+  $(document).ready(function () {
+    // スクロールで反応するアニメーション
+    $(window).on('load scroll', function () {
+      SetScrollTiming('.ani');
+    });
+  });
+
+  // スクロールのタイミングでアニメーションさせる
+  function SetScrollTiming(target) {
+    var box = $(target);
+    var animated = 'animated';
+
+    box.each(function () {
+      var boxOffset = $(this).offset().top;
+      var scrollPos = $(window).scrollTop();
+      var wh = $(window).height();
+
+      //画面内のどの位置で処理を実行するかで「100」の値を変更
+      if (scrollPos > boxOffset - wh + 200) {
+        $(this).addClass('move');
+      }
+    });
+  }
 });
