@@ -92,71 +92,19 @@ $(function () {
     $('nav li a').each(function () {
       //href属性をスラッシュの文字で分割
       var $href = $(this).attr('href').split("/")[1];
-      //      console.log($href);
+//      console.log($href);
       //現在のURLをスラッシュで分割
       var array = location.href.split("/");
-      console.log(array[array.length - 2]);
+      console.log(array[array.length-2]);
       //navのaのhref属性と、現在のURL（フォルダ名）が同じであれば
-      if ($href == array[array.length - 2]) {
+      if ($href==array[array.length-2]) {
         $(this).parent().addClass('current');
-      } else if (array[array.length - 2] == 'beclimber') {
+      }else if(array[array.length-2] == 'beclimber'){ 
         $('nav li:first-child').addClass('current');
-      } else {
+      }else {
         $(this).parent().removeClass('current');
       }
     });
   });
 
-});
-
-// 追加部分
-$(function () {
-  $(document).ready(function () {
-    // スクロールで反応するアニメーション
-    $(window).on('load scroll', function () {
-      SetScrollTiming('.ani1');
-    });
-  });
-
-  // スクロールのタイミングでアニメーションさせる
-  function SetScrollTiming(target) {
-    var box = $(target);
-    var animated = 'animated';
-
-    box.each(function () {
-      var boxOffset = $(this).offset().top;
-      var scrollPos = $(window).scrollTop();
-      var wh = $(window).height();
-
-      //画面内のどの位置で処理を実行するかで「100」の値を変更
-      if (scrollPos > boxOffset - wh + 475) {
-        $(this).addClass('move');
-      }
-    });
-  }
-});
-$(function () {
-  $(document).ready(function () {
-    // スクロールで反応するアニメーション
-    $(window).on('load scroll', function () {
-      SetScrollTiming('.ani');
-    });
-  });
-
-  // スクロールのタイミングでアニメーションさせる
-  function SetScrollTiming(target) {
-    var box = $(target);
-    var animated = 'animated';
-
-    box.each(function () {
-      var boxOffset = $(this).offset().top;
-      var scrollPos = $(window).scrollTop();
-      var wh = $(window).height();
-
-      //画面内のどの位置で処理を実行するかで「100」の値を変更
-      if (scrollPos > boxOffset - wh + 200) {
-        $(this).addClass('move');
-      }
-    });
-  }
 });
