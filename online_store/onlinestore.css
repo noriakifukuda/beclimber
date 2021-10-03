@@ -1,0 +1,107 @@
+@charset "utf-8";
+.top_visual {
+  background: linear-gradient( transparent 50%, rgba(73, 73, 73, 0.5)), url(./images/top_visual.jpg);
+  background-size: cover;
+  background-position-x: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  padding: 0 30px 0 25px;
+  line-height: 1;
+}
+
+h3{
+  display: inline-block;
+  border-bottom: 1px solid #494949;
+  margin-bottom: 30px;
+}
+
+main section:nth-of-type(1){
+  padding-bottom: 0;
+}
+main section:nth-of-type(2){
+  padding-top: 0;
+}
+
+main .box{
+  position: relative;
+  width: 25%;
+  box-sizing: border-box;
+  padding:0 10px;
+  text-align: center;
+  margin-bottom: 90px;
+  height: 438px;
+}
+
+section .box p {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+}
+main .box div div{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+main .a-btn {
+  position: relative;
+  color: #fff;
+  background-color: #f5c921;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-right: 0px;
+  bottom: 0px;
+}
+section .box a {
+  text-align: left;
+  line-height: 2rem;
+  border-bottom:none;
+}
+
+main .flex{
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width:768px){
+  main .box{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 90%;
+    box-sizing: border-box;
+    padding:0 10px;
+    text-align: left;
+    margin-bottom: 90px;
+    height: auto;
+  }
+  main .box div{
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 10px;
+  }
+  main .box div div{
+    position:relative;
+    width: 100%;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    transform: translatex(0%);
+    padding-left: 0;
+  }
+  section .box figure {
+    text-align: center;
+    margin-bottom: 0px;
+    width: 50%;
+  }
+  section .box p {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+  } 
+}

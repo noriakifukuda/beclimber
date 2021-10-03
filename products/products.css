@@ -1,0 +1,241 @@
+@charset "utf-8";
+/*前ページ共通CSS*/
+
+.top_visual {
+  background: linear-gradient( transparent 30%, rgba(73, 73, 73, 0.5)), url(../products/images/top_visual.jpg);
+  background-size: cover;
+  background-position-x: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  padding: 0 30px 0 25px;
+  line-height: 1;
+}
+
+main section {
+  padding-top: 60px;
+  padding-bottom: 90px;
+  box-sizing: border-box;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+
+.slider {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.slider img {
+  width: 10vw;
+  /*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height: auto;
+  padding: 0 100px;
+}
+
+.slider .slick-slide {
+  transform: scale(0.3);
+  /*左右の画像のサイズを80%に*/
+  transition: all .5s;
+  /*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5;
+  /*透過50%*/
+}
+
+.slider .slick-slide.slick-center {
+  transform: scale(1);
+  /*中央の画像のサイズだけ等倍に*/
+  opacity: 1;
+  /*透過なし*/
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+
+.slick-prev, .slick-next {
+  position: absolute;
+  /*絶対配置にする*/
+  top: 42%;
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #666;
+  /*矢印の色*/
+  border-right: 2px solid #666;
+  /*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 0px;
+}
+
+.slick-dots button {
+  color: transparent;
+  display: block;
+  border: none;
+  outline: none;
+
+}
+
+.slick-dots li:nth-of-type(1) button {
+  background: url(./images/arctic_s.png) no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.slick-dots li:nth-of-type(2) button {
+  background: url(./images/beclimber_s.png) no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.slick-dots li:nth-of-type(3) button {
+  background: url(./images/nether_s.png) no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.slick-dots li:nth-of-type(4) button {
+  background: url(./images/raccon_m-11.png) no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.slick-dots li:nth-of-type(5) button {
+  background: url(./images/sloth_s.png) no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.slick-dots li:nth-of-type(6) button {
+  background: url(./images/weasel_s.png) no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.slick-dots li {
+  width: 100px;
+  height: 150px;
+  margin: 0;
+}
+
+.slick-dots li button {
+  width: 100%;
+  height: 100%;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-dots .slick-active button {
+  height:200px;
+  /*ドットボタンの現在地表示の色*/
+}
+
+/* ここまで */
+
+main {
+  position: relative;
+  padding-top: 60px;
+}
+
+main section {
+  padding-top: 0;
+}
+
+main .slider-text {
+  position: absolute;
+  top: 0px;
+  left: 5%;
+  transform: translateX(-50%);
+}
+
+main section .bottle_btn {
+  text-align: center;
+  max-width: 40vw;
+  margin-top: 30px;
+}
+
+main section .bottle_btn img {
+  width: 90%;
+  height: auto;
+}
+
+main .gray {
+  position: absolute;
+  background-color: #cbcbcb;
+  height: 150px;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+@media screen and (max-width:768px) {
+  main section .flex {
+    display: flex;
+  }
+  main {
+    position: relative;
+    padding-top: 120px;
+  }
+  h2 {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin: 0 0 30px 0;
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #494949;
+}
+  main .slider li{
+    text-align: center;
+  }
+  main .slider li img{
+    width: 15vw;
+    margin:auto;
+  }
+  main .slider-text {
+    position: static;
+    top: 0px;
+    left: 0%;
+    transform: translateX(0%);
+  }
+  main section .bottle_btn {
+    text-align: center;
+    max-width: 70vw;
+    margin-top: 30px;
+  }
+  .slick-dots li button {
+    width: 70%;
+    height: 70%;
+}
+}
